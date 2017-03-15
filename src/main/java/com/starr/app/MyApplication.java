@@ -7,7 +7,16 @@ public class MyApplication implements Application {
 
     private MessageService messageService;
 
+    public MyApplication() {
+    }
+
+    // for constructor injection
     public MyApplication(MessageService messageService) {
+        this.messageService = messageService;
+    }
+
+    //for setter injection
+    public void setMessageService(MessageService messageService) {
         this.messageService = messageService;
     }
 

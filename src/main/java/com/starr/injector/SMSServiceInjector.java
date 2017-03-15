@@ -7,7 +7,10 @@ import com.starr.service.SMSServiceImpl;
 
 public class SMSServiceInjector implements ServiceInjector {
 
+    // use setter injection
     public Application getApplication() {
-        return new MyApplication(new SMSServiceImpl());
+        MyApplication myApp = new MyApplication();
+        myApp.setMessageService(new SMSServiceImpl());
+        return myApp;
     }
 }
